@@ -6,7 +6,7 @@ public class PamIntegration extends RouteBuilder {
   @Override
   public void configure() throws Exception {
 
-      from("amqp:queue:shelveRestockThresholdReachedAddress")
+      from("amqp:queue:shelveRestockRequiredAddress")
         .routeId("Receive")
         .log("Receieve Message: ${body}")
         .setHeader(Exchange.HTTP_METHOD, constant("POST"))
